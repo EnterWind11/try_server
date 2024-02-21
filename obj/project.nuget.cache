@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NGTZp9NChJiYKGsqScHygeKwpR2VivY5Jmmwauo/hXSblawD6IS9FBzdLvHnN/AdRfdgDxK8ctyqWRgwbGJWmg==",
+  "dgSpecHash": "BkWNUxNo20ozCOc1rd2KgIOlGoY9UAWHPL22MAe6DvTJSYp3vUvYSVPwFq+SScLVmOvdKu3kLokyKMmCWMQSsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Suhairi\\Documents\\C#\\try_server\\try_server.csproj",
+  "projectFilePath": "D:\\Programming\\Rider\\tryserver\\try_server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
