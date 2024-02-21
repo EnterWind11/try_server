@@ -34,7 +34,11 @@ namespace ServerSide
                     receivedData.AddRange(buffer.Take(readBytes));
                 } while (readBytes > 0);
 
-                Console.WriteLine($"Received Data: " + Encoding.UTF8.GetString(receivedData.ToArray()));
+                // Sending the received data back
+                clientSocket.Send(receivedData.ToArray());
+                Console.WriteLine($"Number of send bytes: {receivedData.Count}");
+
+                //Console.WriteLine($"Received Data: " + Encoding.UTF8.GetString(receivedData.ToArray()));
                 Console.WriteLine($"Client Disconnected");
             }
             catch (Exception ex)
