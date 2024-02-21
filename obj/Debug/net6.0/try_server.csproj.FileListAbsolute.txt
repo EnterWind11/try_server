@@ -1,0 +1,15 @@
+C:\Users\Suhairi\Documents\C#\try_server\bin\Debug\net6.0\try_server.exe
+C:\Users\Suhairi\Documents\C#\try_server\bin\Debug\net6.0\try_server.deps.json
+C:\Users\Suhairi\Documents\C#\try_server\bin\Debug\net6.0\try_server.runtimeconfig.json
+C:\Users\Suhairi\Documents\C#\try_server\bin\Debug\net6.0\try_server.dll
+C:\Users\Suhairi\Documents\C#\try_server\bin\Debug\net6.0\try_server.pdb
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.csproj.AssemblyReference.cache
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.AssemblyInfoInputs.cache
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.AssemblyInfo.cs
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.csproj.CoreCompileInputs.cache
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.dll
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\refint\try_server.dll
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.pdb
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\try_server.genruntimeconfig.cache
+C:\Users\Suhairi\Documents\C#\try_server\obj\Debug\net6.0\ref\try_server.dll
