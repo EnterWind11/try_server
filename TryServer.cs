@@ -25,7 +25,7 @@ namespace ServerSide
                 readByte = clientSocket.Receive(buffer);
                 byte[] recvData = new byte[readByte];
                 Array.Copy(buffer, recvData, readByte);
-                Console.WriteLine($"We got: " + recvData.ToString());
+                Console.WriteLine($"Received Data: " + recvData.ToString());
             } while (readByte > 0);
             
             Console.WriteLine($"Client Disconnected");
