@@ -7,4 +7,19 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Update="try_client\Program.cs">
+        <Link>TryClient\Program.cs</Link>
+      </Compile>
+      <Compile Remove="try_client\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="try_client\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="try_client\**" />
+    </ItemGroup>
+
 </Project>
