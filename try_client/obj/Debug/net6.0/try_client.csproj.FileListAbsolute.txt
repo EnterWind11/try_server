@@ -1,0 +1,15 @@
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\try_client.exe
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\try_client.deps.json
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\try_client.runtimeconfig.json
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\try_client.dll
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\ref\try_client.dll
+D:\Programming\Rider\tryserver\try_client\bin\Debug\net6.0\try_client.pdb
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.csproj.AssemblyReference.cache
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.AssemblyInfoInputs.cache
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.AssemblyInfo.cs
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.csproj.CoreCompileInputs.cache
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.dll
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\ref\try_client.dll
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.pdb
+D:\Programming\Rider\tryserver\try_client\obj\Debug\net6.0\try_client.genruntimeconfig.cache
