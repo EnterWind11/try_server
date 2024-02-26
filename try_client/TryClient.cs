@@ -21,7 +21,7 @@ public class NetworkClient
             Console.WriteLine("Connected to server successfully.");
 
             // Get user input for data to send
-            Console.WriteLine("Enter the data you want to send to the server:");
+            Console.Write("Enter the data you want to send to the server: ");
             string data = Console.ReadLine();
 
             // Send the data to the server (prepend length)
@@ -30,6 +30,13 @@ public class NetworkClient
             byte[] combinedBytes = new byte[lengthBytes.Length + dataBytes.Length];
             Array.Copy(lengthBytes, 0, combinedBytes, 0, lengthBytes.Length);
             Array.Copy(dataBytes, 0, combinedBytes, lengthBytes.Length, dataBytes.Length);
+
+            // Print combined data (length + data) in hex
+            Console.WriteLine("");
+            Console.WriteLine("Sending data (hex):");
+            PrintByteArrayToHex(combinedBytes);
+            
+            Console.WriteLine("");
             socket.Send(combinedBytes);
 
             // Receive data from the server
@@ -53,6 +60,11 @@ public class NetworkClient
             Console.WriteLine(receivedString); // Display received data
             Console.WriteLine("Data Length: {0} bytes", dataLength); // Display data length
 
+            // Print received data (hex)
+            Console.WriteLine("");
+            Console.WriteLine("Received data (hex):");
+            PrintByteArrayToHex(receivedData.ToArray());
+
             // Close the socket
             socket.Close();
             Console.WriteLine("Connection closed.");
@@ -61,5 +73,14 @@ public class NetworkClient
         {
             Console.WriteLine("Error: {0}", ex.Message);
         }
+    }
+
+    private static void PrintByteArrayToHex(byte[] data)
+    {
+        foreach (byte b in data)
+        {
+            Console.Write("{0:X2} ", b); // Format byte as uppercase hex with 2 digits
+        }
+        Console.WriteLine();
     }
 }

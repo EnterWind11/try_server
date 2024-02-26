@@ -1,61 +1,4 @@
-﻿/*
-using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Collections.Generic;
-
-namespace ServerSide
-{
-    class SockServer
-    {
-        static void Main(string[] args)
-        {
-            Socket listenerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPAddress ipaddr = IPAddress.Any;
-            IPEndPoint ipEnd = new IPEndPoint(ipaddr, 7029);
-            
-            try
-            {
-                listenerSocket.Bind(ipEnd);
-                listenerSocket.Listen(int.MaxValue);
-                Console.WriteLine($"Waiting for a connection....");
-
-                Socket clientSocket = listenerSocket.Accept();
-                Console.WriteLine($"Client Connected. " + clientSocket.ToString() + " - IP End Point: " + clientSocket.RemoteEndPoint.ToString());
-
-                List<byte> receivedData = new List<byte>();
-                byte[] buffer = new byte[clientSocket.ReceiveBufferSize];
-
-                int readBytes;
-                do
-                {
-                    readBytes = clientSocket.Receive(buffer);
-                    Console.WriteLine($"Number of received bytes: {readBytes}");
-                    receivedData.AddRange(buffer.Take(readBytes));
-                } while (readBytes > 0);
-
-                // Sending the received data back
-                clientSocket.Send(receivedData.ToArray());
-                Console.WriteLine($"Number of send bytes: {receivedData.Count}");
-
-                //Console.WriteLine($"Received Data: " + Encoding.UTF8.GetString(receivedData.ToArray()));
-                Console.WriteLine($"Client Disconnected");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
-            finally
-            {
-                listenerSocket.Close();
-                Console.ReadKey();
-            }
-        }
-    }
-}
-*/
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -115,7 +58,13 @@ public class NetworkServer
 
             // Calculate and display received bytes for this connection
             long connectionBytesReceived = length + 4; // 4 for length header
+            Console.WriteLine("");
             Console.WriteLine("Received {0} bytes from client, data length: {1}", connectionBytesReceived, length);
+
+            // Print received data in hex
+            Console.WriteLine("");
+            Console.WriteLine("Received data (hex):");
+            PrintByteArrayToHex(buffer);
 
             // Update total statistics
             totalBytesReceived += connectionBytesReceived;
@@ -140,7 +89,22 @@ public class NetworkServer
         byte[] combinedBytes = new byte[lengthBytes.Length + dataBytes.Length];
         Array.Copy(lengthBytes, 0, combinedBytes, 0, lengthBytes.Length);
         Array.Copy(dataBytes, 0, combinedBytes, lengthBytes.Length, dataBytes.Length);
+
+        // Print combined data (length + data) in hex
+        Console.WriteLine("");
+        Console.WriteLine("Sending data (hex):");
+        PrintByteArrayToHex(combinedBytes);
+
         clientSocket.Send(combinedBytes);
         totalBytesSent += combinedBytes.Length;
+    }
+
+    private static void PrintByteArrayToHex(byte[] data)
+    {
+        foreach (byte b in data)
+        {
+            Console.Write("{0:X2} ", b); // Format byte as uppercase hex with 2 digits
+        }
+        Console.WriteLine();
     }
 }
