@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Rider\\tryserver\\try_client\\try_client.csproj": {}
+    "D:\\Programming\\Rider\\try_server\\try_client\\try_client.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Rider\\tryserver\\try_client\\try_client.csproj": {
+    "D:\\Programming\\Rider\\try_server\\try_client\\try_client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Rider\\tryserver\\try_client\\try_client.csproj",
+        "projectUniqueName": "D:\\Programming\\Rider\\try_server\\try_client\\try_client.csproj",
         "projectName": "try_client",
-        "projectPath": "D:\\Programming\\Rider\\tryserver\\try_client\\try_client.csproj",
+        "projectPath": "D:\\Programming\\Rider\\try_server\\try_client\\try_client.csproj",
         "packagesPath": "C:\\Users\\Kaito\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Rider\\tryserver\\try_client\\obj\\",
+        "outputPath": "D:\\Programming\\Rider\\try_server\\try_client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kaito\\AppData\\Roaming\\NuGet\\NuGet.Config"

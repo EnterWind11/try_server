@@ -68,7 +68,7 @@ public class NetworkServer
     public static void Main(string[] args)
     {
         // Define port number and IP address (you can choose any available port)
-        int port = 8080;
+        int port = 7029;
         IPAddress address = IPAddress.Any;
 
         // Create a TCP socket

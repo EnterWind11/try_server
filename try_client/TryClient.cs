@@ -9,7 +9,7 @@ public class NetworkClient
     {
         // Define server IP address and port number
         string serverAddress = "127.0.0.1";
-        int port = 8080;
+        int port = 7029;
 
         // Create a TCP socket
         Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
