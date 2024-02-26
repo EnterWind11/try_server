@@ -104,13 +104,14 @@ public class NetworkServer
     {
         try
         {
-            // Receive data from the client (length + data)
+            // Receive data length (fixed 4 bytes)
             byte[] buffer = new byte[4]; // 4 bytes for length
             clientSocket.Receive(buffer);
             int length = BitConverter.ToInt32(buffer, 0);
+
+            // Receive the actual data
             buffer = new byte[length];
             clientSocket.Receive(buffer);
-            string receivedData = Encoding.UTF8.GetString(buffer);
 
             // Calculate and display received bytes for this connection
             long connectionBytesReceived = length + 4; // 4 for length header
@@ -120,7 +121,7 @@ public class NetworkServer
             totalBytesReceived += connectionBytesReceived;
 
             // Send a response to the client
-            string responseData = "Server received your data: " + receivedData;
+            string responseData = "Server received your data: " + Encoding.UTF8.GetString(buffer);
             SendData(clientSocket, responseData);
 
             // Close the client socket
