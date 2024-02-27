@@ -1,0 +1,15 @@
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\try_packet.exe
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\try_packet.deps.json
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\try_packet.runtimeconfig.json
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\try_packet.dll
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\ref\try_packet.dll
+D:\Programming\Rider\try_server\try_packet\bin\Debug\net6.0\try_packet.pdb
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.csproj.AssemblyReference.cache
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.AssemblyInfoInputs.cache
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.AssemblyInfo.cs
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.csproj.CoreCompileInputs.cache
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.dll
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\ref\try_packet.dll
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.pdb
+D:\Programming\Rider\try_server\try_packet\obj\Debug\net6.0\try_packet.genruntimeconfig.cache

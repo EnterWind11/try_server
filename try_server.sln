@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "try_server", "try_server.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "try_client", "try_client\try_client.csproj", "{0F2DEBA1-6040-48E9-837A-59C3C44736E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "try_packet", "try_packet\try_packet.csproj", "{8E4EC07C-DBF6-4ABE-BF86-20F8AD1F63B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0F2DEBA1-6040-48E9-837A-59C3C44736E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F2DEBA1-6040-48E9-837A-59C3C44736E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F2DEBA1-6040-48E9-837A-59C3C44736E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4EC07C-DBF6-4ABE-BF86-20F8AD1F63B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4EC07C-DBF6-4ABE-BF86-20F8AD1F63B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4EC07C-DBF6-4ABE-BF86-20F8AD1F63B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4EC07C-DBF6-4ABE-BF86-20F8AD1F63B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

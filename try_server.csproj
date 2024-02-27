@@ -12,14 +12,17 @@
         <Link>TryClient\Program.cs</Link>
       </Compile>
       <Compile Remove="try_client\**" />
+      <Compile Remove="try_packet\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="try_client\**" />
+      <EmbeddedResource Remove="try_packet\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="try_client\**" />
+      <None Remove="try_packet\**" />
     </ItemGroup>
 
 </Project>
