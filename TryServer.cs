@@ -48,39 +48,29 @@ public class NetworkServer
         try
         {
             // Receive data length (fixed 4 bytes)
-            byte[] lengthBuffer = await ReceiveAsync(clientSocket, 4); // Receive 4 bytes for length asynchronously
+            byte[] lengthBuffer = await ReceiveAsync(clientSocket, 4);
 
             // Convert the received bytes to an integer
             int length = BitConverter.ToInt32(lengthBuffer, 0);
 
             // Receive the actual data
-            byte[] dataBuffer = await ReceiveAsync(clientSocket, length); // Receive data asynchronously
+            byte[] dataBuffer = await ReceiveAsync(clientSocket, length);
 
-            // Calculate and display received bytes for this connection
-            long connectionBytesReceived = length + 4; // 4 for length header
-            Console.WriteLine("");
-            Console.WriteLine("Received {0} bytes from client, data length: {1}", connectionBytesReceived, length);
+            // Display received data in hex
+            Console.WriteLine($"Received {dataBuffer.Length} bytes from client, data: {Encoding.UTF8.GetString(dataBuffer)}");
 
-            // Print received data in hex
-            Console.WriteLine("");
-            Console.WriteLine("Received data (hex):");
-            PrintByteArrayToHex(dataBuffer);
-
-            // Update total statistics
-            totalBytesReceived += connectionBytesReceived;
-
-            // Send a response to the client
-            string responseData = "Server received your data: " + Encoding.UTF8.GetString(dataBuffer);
-            await SendDataAsync(clientSocket, responseData);
+            // Echo the received data back to the client
+            await SendDataAsync(clientSocket, dataBuffer);
 
             // Close the client socket
             clientSocket.Close();
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error handling client: {0}", ex.Message);
+            Console.WriteLine($"Error handling client: {ex.Message}");
         }
     }
+
 
     private static async Task<byte[]> ReceiveAsync(Socket socket, int size)
     {
@@ -107,13 +97,12 @@ public class NetworkServer
         }
     }
 
-    private static async Task SendDataAsync(Socket clientSocket, string data)
+    private static async Task SendDataAsync(Socket clientSocket, byte[] data)
     {
         byte[] lengthBytes = BitConverter.GetBytes(data.Length);
-        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-        byte[] combinedBytes = new byte[lengthBytes.Length + dataBytes.Length];
+        byte[] combinedBytes = new byte[lengthBytes.Length + data.Length];
         Array.Copy(lengthBytes, 0, combinedBytes, 0, lengthBytes.Length);
-        Array.Copy(dataBytes, 0, combinedBytes, lengthBytes.Length, dataBytes.Length);
+        Array.Copy(data, 0, combinedBytes, lengthBytes.Length, data.Length);
 
         // Print combined data (length + data) in hex
         Console.WriteLine("");

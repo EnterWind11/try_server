@@ -36,22 +36,23 @@ public class GamePacket
             Console.WriteLine($"Sent handshake packet 1: {sentBytes} bytes");
 
             // Receive server response
-            byte[] receiveBuffer = new byte[DEFAULT_BUFFER_LENGTH];
-            int receivedBytes = socket.Receive(receiveBuffer);
+            byte[] receiveBuffer1 = new byte[DEFAULT_BUFFER_LENGTH];
+            int receivedBytes = socket.Receive(receiveBuffer1);
             Console.WriteLine($"Received server response: {receivedBytes} bytes");
 
             // Send handshake packet 2
-            sentBytes = socket.Send(handshakePacket2);
+            /*sentBytes = socket.Send(handshakePacket2);
             Console.WriteLine($"Sent handshake packet 2: {sentBytes} bytes");
 
             // Receive server response
-            receivedBytes = socket.Receive(receiveBuffer);
-            Console.WriteLine($"Received server response: {receivedBytes} bytes");
+            byte[] receiveBuffer2 = new byte[DEFAULT_BUFFER_LENGTH];
+            receivedBytes = socket.Receive(receiveBuffer2);
+            Console.WriteLine($"Received server response: {receivedBytes} bytes");*/
 
             // Receive data from the server
             do
             {
-                receivedBytes = socket.Receive(receiveBuffer);
+                receivedBytes = socket.Receive(receiveBuffer1);
                 if (receivedBytes > 0)
                 {
                     // Process received data (implement logic to handle the data)
