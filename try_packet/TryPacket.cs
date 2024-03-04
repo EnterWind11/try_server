@@ -11,7 +11,8 @@ public class GamePacket
     {
         // Handshake initiation request packets
         byte[] handshakePacket1 = {
-            0x11, 0x00, 0xff, 0xff, 0x92, 0xdf, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x2d, 0x1a
+            0x08, 0x00, 0xff, 0xff, 0x3c, 0xff, 0x34, 0x1a
+            //0x11, 0x00, 0xff, 0xff, 0x92, 0xdf, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x2d, 0x1a
         };
 
         byte[] handshakePacket2 = {
@@ -25,7 +26,6 @@ public class GamePacket
         
         try
         {
-            
             // Connect to the server
             IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
             int port = 7029;
@@ -35,33 +35,28 @@ public class GamePacket
             int sentBytes = socket.Send(handshakePacket1);
             Console.WriteLine($"Sent handshake packet 1: {sentBytes} bytes");
 
-            // Receive server response
+            // Receive server response for handshake packet 1
             byte[] receiveBuffer1 = new byte[DEFAULT_BUFFER_LENGTH];
-            int receivedBytes = socket.Receive(receiveBuffer1);
-            Console.WriteLine($"Received server response: {receivedBytes} bytes");
+            int receivedBytes1 = socket.Receive(receiveBuffer1);
+            Console.WriteLine($"Received server response for handshake packet 1: {receivedBytes1} bytes");
 
             // Send handshake packet 2
-            /*sentBytes = socket.Send(handshakePacket2);
-            Console.WriteLine($"Sent handshake packet 2: {sentBytes} bytes");
-
-            // Receive server response
-            byte[] receiveBuffer2 = new byte[DEFAULT_BUFFER_LENGTH];
-            receivedBytes = socket.Receive(receiveBuffer2);
-            Console.WriteLine($"Received server response: {receivedBytes} bytes");*/
+            int sentBytes2 = socket.Send(handshakePacket2);
+            Console.WriteLine($"Sent handshake packet 2: {sentBytes2} bytes");
 
             // Receive data from the server
+            byte[] receiveBuffer = new byte[DEFAULT_BUFFER_LENGTH];
+            int receivedBytes;
+            
             do
             {
-                receivedBytes = socket.Receive(receiveBuffer1);
+                receivedBytes = socket.Receive(receiveBuffer);
                 if (receivedBytes > 0)
                 {
                     // Process received data (implement logic to handle the data)
                     Console.WriteLine($"Received data: {receivedBytes} bytes");
                 }
-                else if (receivedBytes == 0)
-                {
-                    Console.WriteLine("Connection closed");
-                }
+
             } while (receivedBytes > 0);
         }
         catch (SocketException ex)
@@ -75,15 +70,13 @@ public class GamePacket
         }
         finally
         {
-            // Ensure socket is closed regardless of exceptions
+            // Ensure the socket is closed regardless of exceptions
             socket.Close();
         }
     }
 
     private static string GetSocketErrorDescription(SocketError errorCode)
     {
-        // Map error codes to descriptions based on your chosen resource
-        // (e.g., https://learn.microsoft.com/en-us/windows/win32/winsock/windows-sockets-error-codes-2)
         switch (errorCode)
         {
             case SocketError.AccessDenied:
@@ -92,7 +85,6 @@ public class GamePacket
                 return "Address already in use";
             case SocketError.ConnectionAborted:
                 return "Connection aborted";
-            // ... (Add more mappings for relevant error codes)
             default:
                 return "Unknown error";
         }
