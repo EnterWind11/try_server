@@ -38,7 +38,7 @@ public class GamePacket
             // Receive server response for handshake packet 1
             byte[] receiveBuffer1 = new byte[DEFAULT_BUFFER_LENGTH];
             int receivedBytes1 = socket.Receive(receiveBuffer1);
-            Console.WriteLine($"Received server response for handshake packet 1: {receivedBytes1} bytes");
+            Console.WriteLine($"Received data: {receivedBytes1} bytes");
 
             // Send handshake packet 2
             int sentBytes2 = socket.Send(handshakePacket2);
