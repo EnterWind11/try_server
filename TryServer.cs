@@ -14,7 +14,7 @@ public class GameServer
         try
         {
             // Bind the listener socket to the local endpoint
-            IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+            IPAddress ipAddress = IPAddress.Any; //IPAddress.Parse("127.0.0.1");
             int port = 7029;
             listenerSocket.Bind(new IPEndPoint(ipAddress, port));
 
